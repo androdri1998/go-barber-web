@@ -1,10 +1,9 @@
-import React, { useCallback } from 'react';
-import { FiAlertCircle, FiXCircle } from 'react-icons/fi';
+import React from 'react';
 import { useTransition } from 'react-spring';
 
 import Toast from './Toast';
 
-import { ToastMessage, useToast } from '../../hooks/toast';
+import { ToastMessage } from '../../hooks/toast';
 
 import { Container } from './styles';
 
