@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable react/prop-types */
 import React, {
   InputHTMLAttributes,
@@ -15,10 +16,16 @@ import { Container, Error } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
+  containerStyle?: object;
   icon?: ComponentType<IconBaseProps>;
 }
 
-const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
+const Input: React.FC<InputProps> = ({
+  name,
+  containerStyle = {},
+  icon: Icon,
+  ...rest
+}) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
@@ -42,7 +49,12 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
   }, []);
 
   return (
-    <Container isErrored={!!error} isFocused={isFocused} isFilled={isFilled}>
+    <Container
+      style={containerStyle}
+      isErrored={!!error}
+      isFocused={isFocused}
+      isFilled={isFilled}
+    >
       {Icon && <Icon size={20} />}
       <input
         onFocus={handleInputFocus}
