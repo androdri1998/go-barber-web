@@ -23,7 +23,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.0",
     "react-spring": "^8.0.27",
-    "styled-components": "^5.1.1",
+    "styled-components": "5.1.0",
     "typescript": "~3.7.2",
     "uuidv4": "^6.2.2",
     "yup": "^0.29.3"
@@ -32,6 +32,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watchAll false",
     "eject": "react-scripts eject"
   },
   "browserslist": {
@@ -47,11 +48,13 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^3.4.2",
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.2",
     "@types/yup": "^0.29.4",
     "@typescript-eslint/eslint-plugin": "^3.9.0",
     "@typescript-eslint/parser": "^3.9.0",
+    "axios-mock-adapter": "^1.18.2",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -61,7 +64,8 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1"
   },
   "jest": {
     "collectCoverageFrom": [
